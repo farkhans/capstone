@@ -11,4 +11,5 @@ urlpatterns = [
     path('protected/', ProtectedView.as_view(), name='protected'),
     path('auth/', include('auth.urls')),
     path('food-history/', include('food_history.urls')),
+    path('article/', include('article.urls')),
 ]

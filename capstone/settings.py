@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'food_history',
+    'article',
     'rest_framework',
     'rest_framework_simplejwt',
 ]
@@ -89,6 +90,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    'DATETIME_FORMAT': "%d-%m-%Y %H:%M:%S",
 }
 
 # Password validation
