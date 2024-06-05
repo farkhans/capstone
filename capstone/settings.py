@@ -90,7 +90,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
-    'DATETIME_FORMAT': "%d-%m-%Y %H:%M:%S",
+    'DATETIME_FORMAT': '%d-%m-%Y %H:%M:%S',
+    'DATE_FORMAT': '%a, %d %b %Y',
 }
 
 # Password validation
