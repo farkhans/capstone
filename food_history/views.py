@@ -22,7 +22,6 @@ class CreateFoodHistory(APIView):
     def post(self, request):
         data = request.data
         data['user'] = request.user.pk
-        print(data)
         serializer = FoodHistorySerializer(data=data)
         if serializer.is_valid():
             serializer.save()

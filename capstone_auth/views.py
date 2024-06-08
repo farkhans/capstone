@@ -11,7 +11,6 @@ class Register(APIView):
     def post(self, request):
         data = request.data
         repeat_password = data.get('repeat_password')
-        data.pop('repeat_password')
         
         if (data.get('password') != repeat_password):
             return JsonResponse(
