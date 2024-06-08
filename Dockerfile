@@ -6,6 +6,6 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-RUN python manage.py migrate
+RUN chmod +x start.sh
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["/start.sh"]

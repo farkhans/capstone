@@ -9,7 +9,7 @@ urlpatterns = [
     path('token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
     path('hello/', HelloWorld.as_view(), name='hello'),
     path('protected/', ProtectedView.as_view(), name='protected'),
-    path('auth/', include('auth.urls')),
+    path('auth/', include('capstone_auth.urls')),
     path('food-history/', include('food_history.urls')),
     path('article/', include('article.urls')),
 ]

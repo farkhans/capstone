@@ -144,3 +144,4 @@ GitHub.sublime-settings
 sonar-project.properties
 sonarcommand.txt
 sandbox.py
+credentials.json
