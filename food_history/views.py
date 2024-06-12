@@ -21,12 +21,14 @@ class CreateFoodHistory(APIView):
 
     def post(self, request):
         data = request.data
-        data['user'] = request.user.pk
+        data['user'] = request.user.id
         serializer = FoodHistorySerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(
-                serializer.data,
+                {
+                    'success': 'Food history created successfully'
+                },
                 status=status.HTTP_201_CREATED
             )
         return JsonResponse(

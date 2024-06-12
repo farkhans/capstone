@@ -19,6 +19,15 @@ class Register(APIView):
                 },
                 status=status.HTTP_400_BAD_REQUEST
             )
+
+        username = data.get('username')
+        if User.objects.filter(username=username).exists():
+            return JsonResponse(
+                {
+                    'error': f'Username {username} already exists'
+                },
+                status=status.HTTP_400_BAD_REQUEST
+            )
         
         serializer = UserSerializer(data=data)
 
@@ -48,8 +57,8 @@ class Login(APIView):
             return JsonResponse(
                 {
                     'error': 'Invalid Credentials'
-                    },
-                    status=status.HTTP_404_NOT_FOUND
+                },
+                status=status.HTTP_400_BAD_REQUEST
             )
         
         serializer = UserSerializer(user)
